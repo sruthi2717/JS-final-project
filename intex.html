@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-final-project</title>
+    <link rel="stylesheet" href="style.css">
+    <script
+    src="https://kit.fontawesome.com/1f93242de2.js"
+    crossorigin="anonymous">
+  </script>
+<link rel="stylesheet" href="./cloth/cloth1.css">
+
+  
+  <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+</style>
+
+</head>
+
+<body>
+    <nav id="topbar">
+        <div id="left-menu">
+            <div id="logo" onclick="logoClick()"><a><span>Shop</span>lane</a></div>
+            <a href="#clothing-section">Clothing</a>
+            <a href="#accessory-section">Accessories</a>
+        </div>
+        <div id="search-wrapper">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <input id="search-box" type="text" name="search" placeholder="Search for Clothing and Accessories">
+        </div>
+        <div id="right-menu">
+            <div id="cart-wrapper">
+                <p id="cart-count">0</p>
+                <a href="/checkout.html"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+            </div>
+            <img src="./images/avatar.jpg">
+        </div>
+    </nav>
+
+
+
+<div id="first_tab">
+
+    <div class="slideshow-container" id="index">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img class="images" src="./images/img1.png" style="width:100%">
+          <div class="text">Caption Text</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img class="images" src="./images/img2.png" style="width:100%">
+          <div class="text">Caption Two</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img class="images" src="./images/img3.png" style="width:100%">
+          <div class="text">Caption Three</div>
+        </div>
+        
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 4</div>
+            <img class="images" src="./images/img4.png" style="width:100%">
+            <div class="text">Caption four</div>
+          </div>
+
+        <a class="prev" onclick="plusSlides(-1)"></a>
+        <a class="next" onclick="plusSlides(1)"></a>
+        
+        </div>
+        <br>
+        
+        <div class="dots" style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+          <span class="dot" onclick="currentSlide(4)"></span> 
+        </div>
+
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              let i;
+              let slides = document.getElementsByClassName("mySlides");
+              let dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+            }
+            </script>
+
+
+
+
+  <h2 class="section_heading" id="clothing-section">Clothing for Men and Women</h2>
+  <div class="main1">
+    <div id="clothing" class="column">
+    <img src="" id="value1" value="" onclick="reply(this.id)" style="width: 15%; height: 15%;">
+    <img src="" id="value2" value="" onclick="reply(this.value)" style="width: 15%; height: 15%;">
+    <img src="" id="value3"  value="" onclick="reply(this.value)" style="width: 15%; height: 15%;">
+    <img src="" id="value4" value="" onclick="reply(this.value)" style="width: 15%; height: 15%;">
+    <img src="" id="value5" value="" onclick="reply(this.value)" style="width: 15%; height: 15%;">
+  </div>
+  </div>
+  <h2 class="section_heading" id="accessory-section">Accessories for Men and Women</h2>
+  <div class="main2">
+  <div id="accessories" class="column">
+    <img src="" id="value6" value="" onclick="replyAccess(this.id)" style="width: 15%; height: 15%;">
+    <img src="" id="value7" value="" onclick="replyAccess(this.id)" style="width: 15%; height: 15%;">
+    <img src="" id="value8"  value="" onclick="replyAccess(this.id)" style="width: 15%; height: 15%;">
+    <img src="" id="value9" value="" onclick="replyAccess(this.id)" style="width: 15%; height: 15%;">
+    <img src="" id="value10" value="" onclick="replyAccess(this.id)" style="width: 15%; height: 15%;">
+  </div>
+</div>
+  </div>
+
+
+<!-- cloth1 -->
+
+  <div id="second_tab">
+  <div class="product">
+      <div class="left-container">
+        <img src="" id="image">
+      </div>
+      <div class="row sideData">
+        <h1 id="first"></h1>
+        <h5 id="second"></h5>
+        <div class="third1">
+          <h5 id="third"></h5>
+          <h5 id="eith"></h5>
+        </div>
+       
+        <h5 id="foruth"></h5>
+        <p id="fifth"></p>
+        <h3 id="sixth"></h3>
+       
+        
+        <div id="modal" class="modal column">
+        <img src="" id="image1" class="modal-content"  value="" onclick="reply_click(this.value)">
+        <img src="" id="image2" class="modal-content" value="" onclick="reply_click(this.value)">
+        <img src="" id="image3" class="modal-content" value="" onclick="reply_click(this.value)">
+        <img src="" id="image4" class="modal-content" value="" onclick="reply_click(this.value)">
+        <img src="" id="image5" class="modal-content" value="" onclick="reply_click(this.value)">
+      </div>
+      <button id="seven"></button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- cloth1 end -->
+
+  <!-- cloth 2 start -->
+
+  <div id="clothFull_tab" class="second_tabShow">
+    <div class="product">
+        <div class="left-container">
+          <img src="" id="image1Show" style="width: 50%;">
+        </div>
+        <div class="row sideData1">
+          <h1 id="secondFisrtSentence"></h1>
+          <h5 id="secondSentence"></h5>
+          <div class="third1">
+            <h5 id="secondForthSentence"></h5>
+            <h5 id="secondFifthSentence"></h5>
+          </div>
+          
+          
+          <div id="modal1" class="modal column">
+          <img src="" id="secondImage" class="modal-content"  value="" onclick="secondViewclick(this.value)">
+          <img src="" id="secondImage1" class="modal-content" value="" onclick="secondViewclick(this.value)">
+          <img src="" id="secondImage2" class="modal-content" value="" onclick="secondViewclick(this.value)">
+        </div>
+        <button id="seven1"></button>
+        </div>
+      </div>
+  </div>
+
+  <!-- cloth2 end -->
+
+  <!-- cloth 3 -->
+
+  <div id="thirdTabFull" class="second_tabShow">
+    <div class="product">
+        <div class="left-container">
+          <img src="" id="image2Show" style="width: 50%;">
+        </div>
+        <div class="row sideData1">
+          <h1 id="thirdSentence"></h1>
+          <h5 id="thirdSentence1"></h5>
+          <div class="third1">
+            <h5 id="thirdSentence2"></h5>
+            <h5 id="thirdSentence3"></h5>
+          </div>
+          
+          
+          <div id="modal2" class="modal column">
+          <img src="" id="thirdImage" class="modal-content"  value="" onclick="thirdViewClick(this.value)">
+          <img src="" id="thirdImage1" class="modal-content" value="" onclick="thirdViewClick(this.value)">
+          <img src="" id="thirdImage2" class="modal-content" value="" onclick="thirdViewClick(this.value)">
+          <img src="" id="thirdImage3" class="modal-content" value="" onclick="thirdViewClick(this.value)">
+          <img src="" id="thirdImage4" class="modal-content" value="" onclick="thirdViewClick(this.value)">
+        </div>
+        <button id="seven2"></button>
+        </div>
+      </div>
+  </div>
+
+  <!-- cloth3 -->
+
+
+  <!-- cloth 4 -->
+
+  <div id="ForthTabFull" class="second_tabShow">
+    <div class="product">
+        <div class="left-container">
+          <img src="" id="image3Show" style="width: 50%;">
+        </div>
+        <div class="row sideData1">
+          <h1 id="forthSentence"></h1>
+          <h5 id="forthSentence1"></h5>
+          <div class="third1">
+            <h5 id="forthSentence2"></h5>
+            <h5 id="forthSentence3"></h5>
+          </div>
+          
+          
+          <div id="modal3" class="modal column">
+          <img src="" id="forthImage" class="modal-content"  value="" onclick="forthViewClick(this.value)">
+          <img src="" id="forthImage1" class="modal-content" value="" onclick="forthViewClick(this.value)">
+          <img src="" id="forthImage2" class="modal-content" value="" onclick="forthViewClick(this.value)">
+          <img src="" id="forthImage3" class="modal-content" value="" onclick="forthViewClick(this.value)">
+          <img src="" id="forthImage4" class="modal-content" value="" onclick="forthViewClick(this.value)">
+        </div>
+        <button id="seven3"></button>
+        </div>
+      </div>
+  </div>
+
+  <!-- cloth 4 end -->
+
+  <!-- cloth 5 start -->
+  <div id="fifthTabFull" class="second_tabShow">
+    <div class="product">
+        <div class="left-container">
+          <img src="" id="image4Show" style="width: 50%;">
+        </div>
+        <div class="row sideData1">
+          <h1 id="fifthSentence"></h1>
+          <h5 id="fifthSentence1"></h5>
+          <div class="third1">
+            <h5 id="fifthSentence2"></h5>
+            <h5 id="fifthSentence3"></h5>
+          </div>
+          
+          
+          <div id="modal4" class="modal column">
+          <img src="" id="fifthImage" class="modal-content"  value="" onclick="fifthViewClick(this.value)">
+          <img src="" id="fifthImage1" class="modal-content" value="" onclick="fifthViewClick(this.value)">
+          <img src="" id="fifthImage2" class="modal-content" value="" onclick="fifthViewClick(this.value)">
+          <img src="" id="fifthImage3" class="modal-content" value="" onclick="fifthViewClick(this.value)">
+          <img src="" id="fifthImage4" class="modal-content" value="" onclick="fifthViewClick(this.value)">
+        </div>
+        <button id="seven4"></button>
+        </div>
+      </div>
+  </div>
+
+
+  <!-- cloth5 end -->
+
+ <!-- cloth6 -->
+
+ <div id="sixthTabFull" class="second_tabShow">
+  <div class="product">
+      <div class="left-container">
+        <img src="" id="image6Show" style="width: 50%;">
+      </div>
+      <div class="row sideData1">
+        <h1 id="sixthSentence"></h1>
+        <h5 id="sixthSentence1"></h5>
+        <div class="third1">
+          <h5 id="sixthSentence2"></h5>
+          <h5 id="sixthSentence3"></h5>
+        </div>
+        
+        
+        <div id="modal6" class="modal column">
+        <img src="" id="sixthImage" class="modal-content"  value="" onclick="sixthViewClick(this.value)">
+        <img src="" id="sixthImage1" class="modal-content" value="" onclick="sixthViewClick(this.value)">
+        <img src="" id="sixthImage2" class="modal-content" value="" onclick="sixthViewClick(this.value)">
+        <img src="" id="sixthImage3" class="modal-content" value="" onclick="sixthViewClick(this.value)">
+        <img src="" id="sixthImage4" class="modal-content" value="" onclick="sixthViewClick(this.value)">
+      </div>
+      <button id="seven6"></button>
+      </div>
+    </div>
+</div>
+
+
+ <!-- cloth6 end -->
+
+ <!-- cloth 7 -->
+
+ <div id="7TabFull" class="second_tabShow">
+  <div class="product">
+      <div class="left-container">
+        <img src="" id="image7Show" style="width: 50%;">
+      </div>
+      <div class="row sideData1">
+        <h1 id="seventhSentence"></h1>
+        <h5 id="seventhSentence1"></h5>
+        <div class="third1">
+          <h5 id="seventhSentence2"></h5>
+          <h5 id="seventhSentence3"></h5>
+        </div>
+        
+        
+        <div id="modal7" class="modal column">
+        <img src="" id="seventhImage" class="modal-content"  value="" onclick="seventhViewClick(this.value)">
+        <img src="" id="seventhImage1" class="modal-content" value="" onclick="seventhViewClick(this.value)">
+        <img src="" id="seventhImage2" class="modal-content" value="" onclick="seventhViewClick(this.value)">
+      </div>
+      <button id="seven7"></button>
+      </div>
+    </div>
+</div>
+
+ <!-- cloth 7 end -->
+
+
+ <!-- cloth8 -->
+
+ <div id="8TabFull" class="second_tabShow">
+  <div class="product">
+      <div class="left-container">
+        <img src="" id="image8Show" style="width: 50%;">
+      </div>
+      <div class="row sideData1">
+        <h1 id="eightSentence"></h1>
+        <h5 id="eightSentence1"></h5>
+        <div class="third1">
+          <h5 id="eightSentence2"></h5>
+          <h5 id="eightSentence3"></h5>
+        </div>
+        
+        
+        <div id="modal8" class="modal column">
+        <img src="" id="eightImage" class="modal-content"  value="" onclick="eightClick(this.value)">
+        <img src="" id="eightImage1" class="modal-content" value="" onclick="eightClick(this.value)">
+        <img src="" id="eightImage2" class="modal-content" value="" onclick="eightClick(this.value)">
+      </div>
+      <button id="button8"></button>
+      </div>
+    </div>
+</div>
+ <!-- cloth8 end -->
+
+ <!-- cloth9 -->
+ <div id="9TabFull" class="second_tabShow">
+  <div class="product">
+      <div class="left-container">
+        <img src="" id="image9Show" style="width: 50%;">
+      </div>
+      <div class="row sideData1">
+        <h1 id="ninthSentence"></h1>
+        <h5 id="ninthSentence1"></h5>
+        <div class="third1">
+          <h5 id="ninthSentence2"></h5>
+          <h5 id="ninthSentence3"></h5>
+        </div>
+        
+        
+        <div id="modal9" class="modal column">
+        <img src="" id="nineImage" class="modal-content"  value="" onclick="nineClick(this.value)">
+        <img src="" id="nineImage1" class="modal-content" value="" onclick="nineClick(this.value)">
+        <img src="" id="nineImage2" class="modal-content" value="" onclick="nineClick(this.value)">
+      </div>
+      <button id="button9"></button>
+      </div>
+    </div>
+</div>
+ <!-- cloth9 end -->
+
+ <!-- cloth10 -->
+
+ <div id="10TabFull" class="second_tabShow">
+  <div class="product">
+      <div class="left-container">
+        <img src="" id="image10Show" style="width: 50%;">
+      </div>
+      <div class="row sideData1">
+        <h1 id="tenSentence"></h1>
+        <h5 id="tenSentence1"></h5>
+        <div class="third1">
+          <h5 id="tenSentence2"></h5>
+          <h5 id="tenSentence3"></h5>
+        </div>
+        
+        
+        <div id="modal10" class="modal column">
+        <img src="" id="tenImage" class="modal-content"  value="" onclick="tenClick(this.value)">
+        <img src="" id="tenImage1" class="modal-content" value="" onclick="tenClick(this.value)">
+        <img src="" id="tenImage2" class="modal-content" value="" onclick="tenClick(this.value)">
+      </div>
+      <button id="button10"></button>
+      </div>
+    </div>
+</div>
+
+
+ <!-- cloth10 end -->
+
+  <footer>
+    <div>
+        <p class="footer-heading">Online Store</p>
+        <a href="/" class="footer-link">Men Clothing</a>
+        <a href="/" class="footer-link">Women Clothing</a>
+        <a href="/" class="footer-link">Men Accessories</a>
+        <a href="/" class="footer-link">Women Accessories</a>
+    </div>
+    <div>
+        <p class="footer-heading">Helpful Links</p>
+        <a href="/" class="footer-link">Home</a>
+        <a href="/" class="footer-link">About</a>
+        <a href="/" class="footer-link">Contact</a>
+    </div>
+    <div>
+        <p class="footer-heading">Partners</p>
+        <a href="/" class="footer-link">Zara</a>
+        <a href="/" class="footer-link">Pantaloons</a>
+        <a href="/" class="footer-link">Levis</a>
+        <a href="/" class="footer-link">UCB</a>
+        <a href="/" class="footer-link">+ Many More</a>
+    </div>
+    <div>
+        <p class="footer-heading">Address</p>
+        <p href="/" class="footer-link">Building 101</p>
+        <p href="/" class="footer-link">Central Avenue</p>
+        <p href="/" class="footer-link">LA - 902722</p>
+        <p href="/" class="footer-link">United States</p>
+    </div>
+</footer>
+
+<script src="intex.js"></script>
+
+</body>
+</html>
